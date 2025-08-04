@@ -15,7 +15,7 @@
         <ul class="nav first">
             <li class="create-task">📋<span>Add Task</span></li>
             <li>🌅<span>Today</span></li>
-            <li>📝<span>Create Project</span></li>
+            <li class="create-project">📝<span>Create Project</span></li>
             <li>😎<span>View Projects</span></li>
         </ul>
 
@@ -34,8 +34,8 @@
         <h1>Today</h1>
     </div>
 
-    <dialog>
-        <form>
+    <dialog class="task-dialog">
+        <form class="task-form">
             <h1>Create a Task</h1>
             <div class="form-row">
                 <label for="task-title">Title </label>
@@ -69,7 +69,22 @@
 
             <div class="buttons">
                 <button type="submit"  class="submit">Create Task</button>
-                <button type="button" class="cancel">Cancel</button>
+                <button type="button" class="task cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="project-dialog">
+        <form class="project-form">
+            <h1>Create a New Project</h1>
+            <div class="form-row">
+                <label for="project-title">Name</label>
+                <input type="text" name="project-title" id="project-title" placeholder="Fitness" required>
+            </div>
+
+            <div class="buttons">
+                <button type="submit"  class="submit">Create Project</button>
+                <button type="button" class="project cancel">Cancel</button>
             </div>
         </form>
     </dialog>

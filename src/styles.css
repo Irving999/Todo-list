@@ -52,9 +52,15 @@ li:hover {
 dialog {
     margin: auto;
     height: 60%;
-    width: 40%;
+    width: max(340px, 50%);
     border-radius: 20px;
     border: none;
+}
+
+.project-dialog {
+    height: fit-content;
+    width: fit-content;
+    padding-bottom: 20px;
 }
 
 form {
@@ -79,6 +85,10 @@ form h1 {
 .form-row label,
 .form-row textarea {
     width: 12ch;
+}
+
+.project-form label {
+    width: fit-content;
 }
 
 input[type="text"]::placeholder,
@@ -117,7 +127,7 @@ fieldset {
     display: flex;
     justify-content: center;
     gap: 5%;
-    margin-top: 10%;
+    margin-top: 10px;
 }
 
 .submit,
