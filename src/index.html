@@ -14,27 +14,66 @@
         <h2><span>Simply Done</span></h2>
 
         <ul class="nav first">
-            <li>📋<span>Add Task</span></li>
+            <li class="create-task">📋<span>Add Task</span></li>
             <li>🌅<span>Today</span></li>
             <li>📝<span>Create Project</span></li>
             <li>😎<span>View Projects</span></li>
         </ul>
 
-        <ul class="second">
+        <ul class="nav second">
             <h4><span>My Projects</span></h4>
 
             <div class="projects">
-                <li>🟡<span>Fitness</span></li>
-                <li>🟢<span>Groceries</span></li>
-                <li>🔵<span>Appointments</span></li>
+                <li><span>Fitness</span></li>
+                <li><span>Groceries</span></li>
+                <li><span>Appointments</span></li>
             </div>
         </ul>
     </div>
 
     <div class="main">
         <h1>Today</h1>
-
-
     </div>
+
+    <dialog>
+        <form>
+            <h1>Create a Task</h1>
+            <div class="form-row">
+                <label for="task-title">Title </label>
+                <input type="text" name="task-title" id="task-title" placeholder="Grocery Shopping" required>
+            </div>
+            <div class="form-row">
+                <label for="task-description">Description </label>
+                <textarea name="task-description" id="task-description" rows="5" cols="40" placeholder="Go to the supermarket and buy milk, fruit, bread, and chicken" required></textarea>
+            </div>
+            <div class="form-row">
+                <label for="task-date">Set date </label>
+                <input type="date" name="task-date" id="task-date" required>
+            </div>
+            <fieldset>
+                <span class="legend-like">Priority</span>
+                <label for="task-priority-high">
+                    <input type="radio" name="task-priority" id="task-priority-high" value="high">
+                    High
+                </label>
+
+                <label for="task-priority-medium">
+                    <input type="radio" name="task-priority" id="task-priority-medium" value="medium" >
+                    Medium
+                </label>
+
+                <label for="task-priority-low">
+                    <input type="radio" name="task-priority" id="task-priority-low" value="low">
+                    Low
+                </label>
+            </fieldset>
+
+            <div class="buttons">
+                <button type="submit"  class="submit">Create Task</button>
+                <button type="button" class="cancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <script src="modal.js"></script>
 </body>
 </html>

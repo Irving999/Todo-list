@@ -50,6 +50,106 @@ li:hover {
     cursor: pointer;
 }
 
-span {
+.first span,
+.second span {
     padding-left: 2%;
+}
+
+dialog {
+    margin: auto;
+    height: 60%;
+    width: 40%;
+    border-radius: 20px;
+    border: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    padding: 10px 30px;
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 2%;
+    color: #156064;
+}
+
+.form-row {
+    display: flex;
+    gap: 5%;
+    align-items: baseline;
+}
+
+.form-row label,
+.form-row textarea {
+    width: 12ch;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    font-family: monospace;
+    color: black;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+    padding: 10px;
+    padding-left: 15px;
+    flex-grow: 1;
+    background-color: #F6F7F8;
+    border: none;
+}
+
+fieldset {
+    border: none;
+    display: flex;
+    gap: 5%;
+}
+
+.legend-like {
+    display: inline-block;
+    width: 12ch;
+    margin-right: 5px;
+}
+
+.radio-box {
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 10%;
+}
+
+.submit,
+.cancel {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.submit
+{
+    background-color: #00C49A;
+    color: #FFFCF9;
+}
+
+.submit:hover {
+    background-color: #00A882;
+}
+
+.cancel:hover {
+    background-color: #DCDCDC;
 }
