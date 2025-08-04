@@ -4,12 +4,6 @@
     padding: 0;
 }
 
-.poppins-thin {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-}
-
 body {
     display: grid;
     grid-template-columns: minmax(220px, 20%) 1fr;
@@ -67,7 +61,6 @@ form {
     display: flex;
     flex-direction: column;
     gap: 30px;
-
     padding: 10px 30px;
 }
 

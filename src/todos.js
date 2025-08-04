@@ -1,4 +1,4 @@
-class todos {
+export default class Todos {
     constructor(title, description, dueDate, priority) {
         this.title = title
         this.description = description
@@ -6,4 +6,3 @@ class todos {
         this.priority = priority
     }
 }
-
