@@ -14,40 +14,42 @@
 
         <ul class="nav first">
             <li class="create-task">📋<span>Add Task</span></li>
+            <li class="view-tasks">🔭<span>View Tasks</span></li>
             <li>🌅<span>Today</span></li>
             <li class="create-project">📝<span>Create Project</span></li>
-            <li>😎<span>View Projects</span></li>
+            <li class="view-projects">😎<span>View Projects</span></li>
         </ul>
 
         <ul class="nav second">
             <h4><span>My Projects</span></h4>
 
             <div class="projects">
-                <li><span>Fitness</span></li>
-                <li><span>Groceries</span></li>
-                <li><span>Appointments</span></li>
+
             </div>
         </ul>
     </div>
 
     <div class="main">
-        <h1>Today</h1>
+        <h1>Tasks</h1>
+        <ul class="tasks-container">
+            You have no tasks today
+        </ul>
     </div>
 
     <dialog class="task-dialog">
         <form class="task-form">
             <h1>Create a Task</h1>
             <div class="form-row">
-                <label for="task-title">Title </label>
+                <label for="task-title">Task name </label>
                 <input type="text" name="task-title" id="task-title" placeholder="Grocery Shopping" required>
             </div>
             <div class="form-row">
                 <label for="task-description">Description </label>
-                <textarea name="task-description" id="task-description" rows="5" cols="40" placeholder="Go to the supermarket and buy milk, fruit, bread, and chicken" required></textarea>
+                <textarea name="task-description" id="task-description" rows="5" cols="40" placeholder="Buy milk, fruit, bread, and chicken" required></textarea>
             </div>
             <div class="form-row">
                 <label for="task-date">Set date </label>
-                <input type="date" name="task-date" id="task-date" required>
+                <input type="datetime-local" name="task-date" id="task-date" required>
             </div>
             <fieldset>
                 <span class="legend-like">Priority</span>
@@ -64,6 +66,11 @@
                 <label for="task-priority-low">
                     <input type="radio" name="task-priority" id="task-priority-low" value="low">
                     Low
+                </label>
+
+                <label for="task-priority-none">
+                    <input type="radio" name="task-priority" id="task-priority-none" value="none">
+                    None
                 </label>
             </fieldset>
 

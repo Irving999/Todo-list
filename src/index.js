@@ -1,13 +1,19 @@
 import "./styles.css"
-import Todo from "./todos.js"
-import Project from "./project.js"
+import Todo, { tasks } from "./todos.js"
+import Project, { projects } from "./project.js"
+import { showAllTasks } from "./dom/renderTodo.js"
 
-const task = document.querySelector(".create-task")
+// Displays tasks when 'View Tasks' is clicked
+const viewTasks = document.querySelector(".view-tasks")
+viewTasks.addEventListener("click", () => showAllTasks())
+
+// Handles Modal form for tasks
+const createTask = document.querySelector(".create-task")
 const taskDialog = document.querySelector(".task-dialog")
 const taskForm = document.querySelector(".task-form")
 const taskCloseBtn = document.querySelector(".task.cancel")
 
-task.addEventListener("click", () => taskDialog.showModal())
+createTask.addEventListener("click", () => taskDialog.showModal())
 
 taskCloseBtn.addEventListener("click", () => {
     taskDialog.close()
@@ -22,12 +28,13 @@ taskForm.addEventListener("submit", (e) => {
     const description = formData.get("task-description")
     const date = formData.get("task-date")
     const priority = formData.get("task-priority")
-    const newTask = new Todo(title, description, date, priority)
-    console.log(newTask)
+    new Todo(title, description, date, priority)
+    showAllTasks()
     taskForm.reset()
     taskDialog.close()
 })
 
+// Handles Modal form for projects
 const project = document.querySelector(".create-project")
 const projectDialog = document.querySelector(".project-dialog")
 const projectForm = document.querySelector(".project-form")
@@ -46,6 +53,7 @@ projectForm.addEventListener("submit", (e) => {
     const formData = new FormData(projectForm)
     const projectTitle = formData.get("project-title")
     const newProject = new Project(projectTitle)
+
     console.log(newProject)
     projectForm.reset()
     projectDialog.close()

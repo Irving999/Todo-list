@@ -11,6 +11,8 @@ body {
     font-family: "Poppins";
 }
 
+/* Sidebar */
+
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -29,16 +31,17 @@ ul {
     list-style: none;
 }
 
-li {
+.nav li {
     padding: 5px;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 .projects li {
     padding-left: 4%;
 }
 
-li:hover {
+.nav li:hover {
     background-color: #FFF0F2;
     color: #FF6978;
     cursor: pointer;
@@ -48,6 +51,8 @@ li:hover {
 .second span {
     padding-left: 2%;
 }
+
+/* Task and Project Modal */
 
 dialog {
     margin: auto;
@@ -99,7 +104,7 @@ textarea::placeholder {
 
 input[type="text"],
 textarea,
-input[type="date"] {
+input[type="datetime-local"] {
     padding: 10px;
     padding-left: 15px;
     flex-grow: 1;
@@ -155,4 +160,60 @@ button:hover {
 
 .cancel:hover {
     background-color: #DCDCDC;
+}
+
+/* Main content */
+.main {
+    padding-top: 60px;
+    padding-left: 50px;
+}
+
+.main h1 {
+    margin-bottom: 20px;
+}
+
+.tasks-container li {
+    border-top: 1px solid lightgray;
+    padding: 1em 1.5em;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.tasks-container:last-child {
+    border-bottom: 1px solid lightgray;
+}
+
+.tasks-container li:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+.task-item::before {
+    content: "";
+    height: 0.8rem;
+    width: 0.8rem;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    border: #808080 solid;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+}
+
+.high-priority::before {
+    border: #F45D01 solid;
+    background-color: #FFE5CC;
+}
+
+.medium-priority::before {
+    border: #EEB902 solid;
+    background-color: #FFF3B8;
+}
+
+.low-priority::before {
+    border: #2D7DD2 solid;
+    background-color: #D6E4FB;
 }
