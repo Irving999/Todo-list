@@ -22,25 +22,32 @@ function displayTask(task, container) {
     container.appendChild(taskli)
 }
 
-function showAllTasks() {
-    if (tasks.length === 0) {
-        return
-    }
+function showAllTasks(container, array) {
+    array.forEach(task => {
+        displayTask(task, container)
+    })
+}
+
+function loadTasks() {
     const main = document.querySelector(".main")
     main.textContent = ""
 
     const h1 = document.createElement("h1")
     h1.textContent = "Tasks"
-
+    
     const container = document.createElement("ul")
-    container.classList.add("tasks-container")
+    container.classList.add("tasks")
+    container.classList.add("container")
+
+    if (tasks.length === 0) {
+        container.textContent = "You have no tasks"
+    } else {
+        showAllTasks(container, tasks)
+    }
 
     main.appendChild(h1)
-    main.append(container)
-
-    tasks.forEach(task => {
-        displayTask(task, container)
-    })
+    main.appendChild(container)
 }
 
-export { showAllTasks }
+
+export { loadTasks, showAllTasks }

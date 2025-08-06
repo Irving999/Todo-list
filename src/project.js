@@ -1,14 +1,10 @@
-let projects = []
+export let projects = []
 
 export default class Project {
-    tasks = []
+    projectTasks = []
 
     constructor(title) {
         this.title = title
         projects.push(this)
-    }
-
-    addTask(task) {
-        this.tasks.push(task)
     }
 }

@@ -12,7 +12,6 @@ body {
 }
 
 /* Sidebar */
-
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -172,18 +171,19 @@ button:hover {
     margin-bottom: 20px;
 }
 
-.tasks-container li {
+/* Main Content for Tasks Display */
+.tasks.container li {
     border-top: 1px solid lightgray;
     padding: 1em 1.5em;
     position: relative;
     transition: background-color 0.2s ease;
 }
 
-.tasks-container:last-child {
+.tasks.container li:last-child {
     border-bottom: 1px solid lightgray;
 }
 
-.tasks-container li:hover {
+.tasks.container li:hover {
     background-color: #F5F5F5;
     cursor: pointer;
 }
@@ -216,4 +216,28 @@ button:hover {
 .low-priority::before {
     border: #2D7DD2 solid;
     background-color: #D6E4FB;
+}
+
+/* Main content for Projects Display */
+.container h4 {
+    margin-bottom: 10px;
+}
+
+.project-item {
+    margin-bottom: 4rem;
+}
+
+.add-task {
+    color: #999999;
+}
+
+.add-task::before {
+    content: "+";
+    color: #C1292E;
+    font-size: 1.8em;
+    font-family: 'Courier New', Courier, monospace;
+
+    position: absolute;
+    left: 0;
+    top: 12px;
 }
