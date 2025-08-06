@@ -33,9 +33,18 @@ function handleProjectFormSubmit(e, form, dialog) {
     const projectTitle = formData.get("project-title")
     new Project(projectTitle)
     
+    displaySidebarProjects(projectTitle)
     loadProjects()
     form.reset()
     dialog.close()
 }
 
-export { handleTaskFormSubmit, handleProjectFormSubmit }
+function displaySidebarProjects(projectTilte) {
+    // Display projects on sidebar
+    const projectsContainer = document.querySelector(".nav.second")
+    const projectName = document.createElement("li")
+    projectName.textContent = projectTilte
+    projectsContainer.appendChild(projectName)
+}
+
+export { handleTaskFormSubmit, handleProjectFormSubmit, displaySidebarProjects }

@@ -1,5 +1,6 @@
 import { projects } from "../project"
 import { showAllTasks } from "../dom/renderTodo"
+import { displaySidebarProjects } from "./handlers"
 
 function displayProject(project, container) {
     const projectli = document.createElement("li")

@@ -31,16 +31,12 @@ ul {
 }
 
 .nav li {
-    padding: 5px;
+    padding:5px;
     border-radius: 10px;
     font-size: 1rem;
 }
 
-.projects li {
-    padding-left: 4%;
-}
-
-.nav li:hover {
+.nav.first li:hover {
     background-color: #FFF0F2;
     color: #FF6978;
     cursor: pointer;
@@ -51,8 +47,12 @@ ul {
     padding-left: 2%;
 }
 
-/* Task and Project Modal */
+/* Project Sidebar */
+.nav.second li {
+    padding-left: 22px;
+}
 
+/* Task and Project Modal */
 dialog {
     margin: auto;
     height: 60%;

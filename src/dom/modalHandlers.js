@@ -32,9 +32,9 @@ function setUpProjectModal(elementClicked) {
         projectForm.reset()
     })
 
-    projectForm.addEventListener("submit", (e) => 
+    projectForm.addEventListener("submit", (e) => {
         handleProjectFormSubmit(e, projectForm, projectDialog)
-    )
+    })
 }
 
 export { setUpTaskModal, setUpProjectModal }
