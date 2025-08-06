@@ -20,7 +20,7 @@ function handleTaskFormSubmit(e, form, dialog, projectName) {
         loadProjects()
     } else {
         newTask.addToGeneralTasks()
-        loadTasks()
+        loadTasks(tasks)
     }
     form.reset()
     dialog.close()

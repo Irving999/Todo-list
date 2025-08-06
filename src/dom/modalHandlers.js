@@ -1,13 +1,11 @@
 import { handleTaskFormSubmit, handleProjectFormSubmit } from "./handlers.js"
 
-function setUpTaskModal(elementClicked) {
+function setUpTaskModal() {
     const taskForm = document.querySelector(".task-form")
     const taskDialog = document.querySelector(".task-dialog")
     const taskCloseBtn = document.querySelector(".task.cancel")
 
-    elementClicked.addEventListener("click", () => {
-        taskDialog.showModal()
-    })
+    taskDialog.showModal()
 
     taskCloseBtn.addEventListener("click", () => {
         taskDialog.close()

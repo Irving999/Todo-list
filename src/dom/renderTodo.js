@@ -21,10 +21,8 @@ function displayTask(task, container) {
 
     container.appendChild(taskli)
 
-    const date = getDateTime(task)
     const span = document.createElement("span")
-    span.textContent = `⏱️ ${date.hrMin}`
-    console.log(task.dueDate)
+    span.textContent = `⏱️ ${task.getDate()} ${task.getTime()}`
 
     taskli.appendChild(span)
 }
@@ -35,44 +33,29 @@ function showAllTasks(container, array) {
     })
 }
 
-function loadTasks() {
+function loadTasks(tasksArray) {
     const main = document.querySelector(".main")
     main.textContent = ""
 
     const h1 = document.createElement("h1")
-    h1.textContent = "Tasks"
+    tasksArray === tasks ? h1.textContent = "Tasks" : h1.textContent = "Today's Tasks"
     
     const container = document.createElement("ul")
     container.classList.add("tasks")
     container.classList.add("container")
 
-    if (tasks.length === 0) {
-        container.textContent = "You have no tasks"
+    if (tasksArray.length === 0) {
+        if (tasksArray === tasks) {
+            container.textContent = "You have no tasks"
+        } else {
+            container.textContent = "You have no tasks today 😊"
+        }
     } else {
-        showAllTasks(container, tasks)
+        showAllTasks(container, tasksArray)
     }
 
     main.appendChild(h1)
     main.appendChild(container)
-}
-
-//Displays time of task
-function getDateTime(task) {
-    const date = new Date(task.dueDate);
-
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-
-    let hours = date.getHours();
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-
-    const period = hours >= 12 ? "pm" : "am";
-    hours = hours % 12 || 12;
-
-    const hrMin = `${hours}:${minutes}${period}`;
-
-    return { year, month, day, hrMin };
 }
 
 export { loadTasks, showAllTasks }
