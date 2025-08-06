@@ -195,12 +195,18 @@ button:hover {
 
     position: absolute;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30%;
 
     border: #808080 solid;
     background-color: #E0E0E0;
     border-radius: 50%;
+}
+
+.tasks.container span {
+    display: block;
+    font-size: 0.7rem;
+    color: green;
+    margin-top: -1.em;
 }
 
 .high-priority::before {
